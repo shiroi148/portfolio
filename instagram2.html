@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Videos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+    @font-face {
+            font-family: 'BodoniBlack';
+            src: url("BOD_BLAR.TTF") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+          }
+
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f2e8; 
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16.5px;
+        }
+
+        .logo {
+            width: 25px;
+            height: 25px;
+            background-color: #0000ff;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #0000ff;
+            font-weight: 600;
+        }
+
+        .nav-links a:nth-child(3) {
+            text-decoration: underline;
+        }
+
+        .instagram-text {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%) rotate(180deg);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 60px;
+            color: blue;
+            font-family: 'BodoniBlack', 'Bodoni MT Black', serif;
+            z-index: 0;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-left: 90px;
+            overflow-x: hidden;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .video-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            width: 100%;
+            margin-right: -60px;
+            transition: transform 0.3s ease;
+            flex-wrap: nowrap;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 305px;
+            flex: 0 0 305px;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        
+        .video-thumb {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+        
+        .video-caption {
+            text-align: center;
+        }
+        
+        .caption-button {
+            border: none;
+            border-radius: 0px;
+            padding: 15px;
+            font-size: 16px;
+            background-color: transparent;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: flex-start;
+            width: 90%;
+            margin-left: 33px;
+            text-decoration: none;
+            color: #000;
+            margin-top: -36px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .back-button {
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .back-button:hover{
+            text-decoration: underline;
+            color: #0000ff;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .arrow-left {
+            left: 10px;
+        }
+        
+        .arrow-right {
+            right: 10px;
+        }
+        
+        @media (max-width: 1024px) {
+            .video-container {
+                width: 300px;
+                flex: 0 0 300px;
+            }
+            
+            .instagram-text {
+                font-size: 40px;
+                left: 5px;
+            }
+            
+            .content {
+                margin-left: 70px;
+            }
+            
+            .navigation {
+                margin-left: 45px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 20px;
+                font-size: 16px;
+            }
+            
+            .instagram-text {
+                font-size: 30px;
+                left: 5px;
+            }
+            
+            .video-container {
+                width: 270px;
+                flex: 0 0 270px;
+            }
+            
+            .content {
+                margin-left: 60px;
+            }
+            
+            .navigation {
+                margin-left: 35px;
+            }
+        }
+
+        .footer {
+            background-color: #0000ff;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 35px;
+            font-family: Calibri, 'Trebuchet MS', sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+
+</style>
+</head>
+<body>
+    <nav>
+        <div class="logo"></div>
+        <div class="nav-links">
+            <a href="landpage2.html" class="about-me">About Me</a>
+            <a href="portfoliopage.html">Portfolio</a>
+            <a href="socialmedia.html">Social Media</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="instagram-text">INSTAGRAM</div>
+        
+    <div class="content">
+        <div class="arrow arrow-left">&lt;</div>
+        <div class="video-grid">
+            <div class="video-container">
+                <video src="video/WhatsApp Video 2025-03-07 at 16.24.03.mp4" class="video-thumb"></video>
+                <div class="video-caption">
+                    <button class="caption-button">Short vlog to Bandung!</button>
+                </div>
+            </div>
+            
+            <div class="video-container">
+                <video src="video/IMG_3573.MP4  " class="video-thumb"></video>
+                <div class="video-caption">
+                    <button class="caption-button">Playing Luge in Lembang!</button>
+                </div>
+            </div>
+            
+            <div class="video-container">
+                <video src="video/IMG_2567.MP4" class="video-thumb"></video>
+                <div class="video-caption">
+                    <button class="caption-button">Short vlog of us cooking!</button>
+                </div>
+            </div>
+            
+            <div class="video-container">
+                <video src="video/IMG_1985.MP4" class="video-thumb"></video>
+                <div class="video-caption">
+                    <button class="caption-button">Kodagu Cafe!</button>
+                </div>
+            </div>
+            
+            <div class="video-container">
+                <video src="video/IMG_1956 (1).MP4" class="video-thumb"></video>
+                <div class="video-caption">
+                    <button class="caption-button">Friends with Bru Cafe!</button>
+                </div>
+            </div>
+        </div>
+        <div class="arrow arrow-right">&gt;</div>
+    </div>
+    
+    <div class="navigation">
+        <a href="socialmedia.html" class="back-button">back</a>
+    </div>
+
+    <footer class="footer">
+        <p class="copyright">Copyright © 2025 <span class="name">Rachel</span>. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoGrid = document.querySelector('.video-grid');
+            const videos = document.querySelectorAll('video');
+            const arrowLeft = document.querySelector('.arrow-left');
+            const arrowRight = document.querySelector('.arrow-right');
+            
+            let currentIndex = 0;
+            let startX, moveX;
+            let isDragging = false;
+            
+            // Calculate how many videos are visible at once based on screen width
+            function getVisibleVideosCount() {
+                if (window.innerWidth > 1200) {
+                    return 3; // Desktop shows 3 videos
+                } else if (window.innerWidth > 768) {
+                    return 2; // Tablet shows 2 videos
+                } else {
+                    return 1; // Mobile shows 1 video
+                }
+            }
+            
+            // Move the carousel
+            function moveCarousel() {
+                const videoWidth = document.querySelector('.video-container').offsetWidth + 20; // width + gap
+                videoGrid.style.transform = `translateX(-${currentIndex * videoWidth}px)`;
+            }
+            
+            // Check if arrows should be visible
+            function updateArrowVisibility() {
+                const maxIndex = videos.length - getVisibleVideosCount();
+                arrowLeft.style.display = currentIndex <= 0 ? 'none' : 'flex';
+                arrowRight.style.display = currentIndex >= maxIndex ? 'none' : 'flex';
+            }
+            
+            // Initialize arrow visibility
+            updateArrowVisibility();
+            
+            // Arrow click handlers
+            arrowLeft.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    moveCarousel();
+                    updateArrowVisibility();
+                }
+            });
+            
+            arrowRight.addEventListener('click', function() {
+                const maxIndex = videos.length - getVisibleVideosCount();
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    moveCarousel();
+                    updateArrowVisibility();
+                }
+            });
+            
+            // Touch swipe functionality
+            videoGrid.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            });
+            
+            videoGrid.addEventListener('touchmove', function(e) {
+                if (!isDragging) return;
+                moveX = e.touches[0].clientX;
+                const diff = moveX - startX;
+                
+                // Add a little movement to the carousel during the drag
+                if (Math.abs(diff) > 5) {
+                    const videoWidth = document.querySelector('.video-container').offsetWidth + 20;
+                    const offset = -currentIndex * videoWidth + diff * 0.5;
+                    
+                    // Limit the drag movement
+                    const maxIndex = videos.length - getVisibleVideosCount();
+                    const minOffset = -maxIndex * videoWidth;
+                    
+                    if (offset <= 0 && offset >= minOffset) {
+                        videoGrid.style.transform = `translateX(${offset}px)`;
+                    }
+                }
+            });
+            
+            videoGrid.addEventListener('touchend', function() {
+                if (!isDragging) return;
+                isDragging = false;
+                
+                const diff = moveX - startX;
+                const videoWidth = document.querySelector('.video-container').offsetWidth + 20;
+                const maxIndex = videos.length - getVisibleVideosCount();
+                
+                if (diff < -50 && currentIndex < maxIndex) {
+                    // Swipe left
+                    currentIndex++;
+                } else if (diff > 50 && currentIndex > 0) {
+                    // Swipe right
+                    currentIndex--;
+                }
+                
+                moveCarousel();
+                updateArrowVisibility();
+            });
+            
+            // Mouse drag functionality for desktop
+            videoGrid.addEventListener('mousedown', function(e) {
+                startX = e.clientX;
+                isDragging = true;
+                videoGrid.style.cursor = 'grabbing';
+                
+                // Prevent default drag behavior
+                e.preventDefault();
+            });
+            
+            videoGrid.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                moveX = e.clientX;
+                const diff = moveX - startX;
+                
+                // Add a little movement to the carousel during the drag
+                if (Math.abs(diff) > 5) {
+                    const videoWidth = document.querySelector('.video-container').offsetWidth + 20;
+                    const offset = -currentIndex * videoWidth + diff * 0.5;
+                    
+                    // Limit the drag movement
+                    const maxIndex = videos.length - getVisibleVideosCount();
+                    const minOffset = -maxIndex * videoWidth;
+                    
+                    if (offset <= 0 && offset >= minOffset) {
+                        videoGrid.style.transform = `translateX(${offset}px)`;
+                    }
+                }
+            });
+            
+            videoGrid.addEventListener('mouseup', function() {
+                if (!isDragging) return;
+                
+                const diff = moveX - startX;
+                const videoWidth = document.querySelector('.video-container').offsetWidth + 20;
+                const maxIndex = videos.length - getVisibleVideosCount();
+                
+                if (diff < -50 && currentIndex < maxIndex) {
+                    // Drag left
+                    currentIndex++;
+                } else if (diff > 50 && currentIndex > 0) {
+                    // Drag right
+                    currentIndex--;
+                }
+                
+                moveCarousel();
+                updateArrowVisibility();
+                
+                isDragging = false;
+                videoGrid.style.cursor = 'grab';
+            });
+            
+            videoGrid.addEventListener('mouseleave', function() {
+                if (isDragging) {
+                    moveCarousel();
+                    isDragging = false;
+                    videoGrid.style.cursor = 'grab';
+                }
+            });
+            
+            // Video hover play functionality
+            videos.forEach(video => {
+                // Play video on hover
+                video.addEventListener('mouseenter', function() {
+                    this.play();
+                });
+                
+                // Pause and reset video when mouse leaves
+                video.addEventListener('mouseleave', function() {
+                    this.pause();
+                    this.currentTime = 0;
+                });
+                
+                // For touch devices
+                video.addEventListener('touchstart', function(e) {
+                    e.stopPropagation(); // Prevent triggering the carousel swipe
+                    if (this.paused) {
+                        this.play();
+                    } else {
+                        this.pause();
+                        this.currentTime = 0;
+                    }
+                });
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                moveCarousel();
+                updateArrowVisibility();
+            });
+        });
+    </script>
+</body>
+</html>
