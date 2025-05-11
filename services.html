@@ -26,6 +26,9 @@
             color: #000000;
             font-family: Arial, Helvetica, sans-serif;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Make sure body takes at least full viewport height */
         }
 
         nav {
@@ -66,6 +69,7 @@
             align-items: center;
             padding: 20px;
             margin-top: 20px;
+            flex: 1; /* This makes the container expand to fill available space */
         }
 
         .page-title {
@@ -131,10 +135,9 @@
             color: #ffffff;
             text-align: center;
             padding: 20px 0;
-            margin-top: 110px;
             font-family: Arial, sans-serif;
-            bottom: 0;
             width: 100%;
+            margin-top: 70px;
         }
 
         @media (max-width: 768px) {
@@ -241,14 +244,16 @@
             </div>
 
             <div class="service-card">
-    <div class="service-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-            <circle cx="12" cy="13" r="4"></circle>
-        </svg>
+                <div class="service-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <circle cx="12" cy="13" r="4"></circle>
+                    </svg>
+                </div>
+                <span class="service-title">Photography</span>
+            </div>
+        </div>
     </div>
-    <span class="service-title">Photography</span>
-</div>
 
     <footer class="footer">
         <p class="copyright">Copyright © 2025 <span class="name">Rachel</span>. All Rights Reserved.</p>
