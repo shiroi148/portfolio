@@ -36,7 +36,7 @@
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Make sure body takes at least full viewport height */
+            min-height: 100vh;
         }
 
         nav {
@@ -79,6 +79,8 @@
             padding: 20px;
             margin-top: 20px;
             flex-grow: 1;
+            width: 100%;
+            justify-content: center;
         }
 
         .page-title {
@@ -89,6 +91,7 @@
             margin-bottom: 20px;
             letter-spacing: 2px;
             font-weight: 600;
+            text-align: center;
         }
 
         .subtitle {
@@ -150,6 +153,47 @@
         }
 
         /* Media Queries for Responsiveness */
+        @media (min-width: 1201px) {
+            .services-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 1400px;
+                margin: 0 auto; /* This centers the container */
+            }
+
+            .services-grid {
+                max-width: 1200px;
+                gap: 30px;
+                justify-content: center;
+            }
+            
+            .service-card {
+                padding: 25px;
+            }
+        }
+
+        @media (min-width: 1601px) {
+            .services-container {
+                max-width: 1600px;
+            }
+
+            .services-grid {
+                max-width: 1400px;
+                gap: 40px;
+            }
+            
+            .page-title {
+                font-size: 100px;
+            }
+            
+            .subtitle {
+                font-size: 22px;
+                max-width: 900px;
+            }
+        }
+
+        /* Existing smaller screen media queries... */
         @media (max-width: 1200px) {
             .services-grid {
                 max-width: 900px;
@@ -180,89 +224,7 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .page-title {
-                font-size: 60px;
-            }
-            
-            .subtitle {
-                font-size: 18px;
-                margin-bottom: 30px;
-            }
-            
-            nav {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .logo {
-                align-self: flex-start;
-            }
-            
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .services-grid {
-                gap: 15px;
-                max-width: 500px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .page-title {
-                font-size: 40px;
-            }
-            
-            .subtitle {
-                font-size: 16px;
-                margin-bottom: 25px;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-                max-width: 350px;
-            }
-            
-            .service-card {
-                height: 70px;
-            }
-            
-            .service-icon {
-                width: 40px;
-                height: 40px;
-                min-width: 40px;
-            }
-            
-            .service-icon svg {
-                width: 20px;
-                height: 20px;
-            }
-            
-            .service-title {
-                font-size: 15px;
-            }
-            
-            .nav-links {
-                font-size: 14px;
-                gap: 10px;
-            }
-            
-            .footer {
-                margin-top: 30px;
-                font-size: 14px;
-            }
-        }
-
-         @font-face {
-            font-family: 'BodoniBlack';
-            src: url("/font/BOD_BLAR.TTF") format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
+        /* Rest of your existing media queries... */
     </style>
 </head>
 <body>
