@@ -90,6 +90,8 @@
             align-items: center;
             align-self: center;
             justify-content: center;
+            display: flex;
+            flex-direction: column;
         }
         
         .content {
@@ -97,7 +99,7 @@
             justify-content: center;
             margin-top: 20px;
             margin-left: 90px;
-            position: relative;
+            height: 100%;
             z-index: 5;
             width: calc(100% - 90px);
             overflow: hidden;
@@ -154,9 +156,10 @@
             display: flex;
             justify-content: flex-start;
             width: 90%;
-            margin-left: 31px;
+          
             text-decoration: none;
             color: #000;
+            margin-left: -60px;
             margin-top: -35px;
             position: relative;
             z-index: 5;
@@ -245,9 +248,7 @@
                 width: calc(100% - 80px);
             }
             
-            .navigation {
-                margin-left: 80px;
-            }
+           
             
             .nav-links {
                 gap: 30px;
@@ -279,9 +280,7 @@
                 width: calc(100% - 60px);
             }
             
-            .navigation {
-                margin-left: 60px;
-            }
+
             
             nav {
                 padding: 15px 3%;
