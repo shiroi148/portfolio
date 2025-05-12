@@ -218,138 +218,95 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-                /* Enhanced Responsive Styles */
-
-        /* Large devices (desktops) */
+        /* Media queries for responsiveness */
         @media (max-width: 1200px) {
             .social-feeds {
-                justify-content: center;
-                padding: 0 20px;
                 gap: 30px;
+                padding: 25px 15px;
             }
             
             .socialmediapost {
                 font-size: 65px;
-                padding: 0 50px;
             }
         }
-
-        /* Medium devices (tablets) */
+        
         @media (max-width: 992px) {
             .social-feeds {
-                gap: 25px;
-            }
-            
-            .social-card {
-                width: 300px; /* Slightly smaller cards */
+                gap: 20px;
             }
             
             .socialmediapost {
                 font-size: 55px;
-                padding: 0 30px;
+            }
+            
+            .nav {
+                padding: 15px 30px;
+            }
+            
+            .nav-links {
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo {
+                align-self: flex-start;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .social-feeds {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .socialmediapost {
+                font-size: 45px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .social-card {
+                max-width: 450px;
+            }
+            
+            .instagramtiktoklink, .instagramtiktoklink2 {
+                display: block;
+                max-width: 200px;
+                margin: 10px auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .socialmediapost {
+                font-size: 40px;
+            }
+            
+            .socialmediapostcontext {
+                font-size: 14px;
             }
             
             .feed-content {
                 height: 300px;
             }
-        }
-
-        /* Small devices (landscape phones) */
-        @media (max-width: 768px) {
-            nav {
-                padding: 15px;
-                flex-direction: column;
-                gap: 15px;
-            }
-
+            
             .nav-links {
-                gap: 15px;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .social-feeds {
-                gap: 20px;
-                padding-top: 15px;
-            }
-            
-            .social-card {
-                width: 100%;
-                max-width: 350px;
-            }
-            
-            .socialmediapost {
-                font-size: 50px;
-                padding: 0 20px;
-                text-align: center;
-            }
-            
-            .socialmediapostcontext {
-                text-align: center;
-            }
-            
-            .instagramtiktoklink, 
-            .instagramtiktoklink2 {
-                margin-right: 0;
-                display: inline-block;
-                width: 100%;
-                max-width: 200px;
-            }
-        }
-
-        /* Extra small devices (phones) */
-        @media (max-width: 576px) {
-            .nav-links {
+                font-size: 14px;
                 gap: 10px;
             }
             
-            .nav-links a {
-                font-size: 14px;
-            }
-            
-            .socialmediapost {
-                font-size: 42px;
-            }
-            
-            .socialmediapostcontext {
-                font-size: 14px;
-            }
-            
-            .social-header {
-                padding: 8px 15px;
-            }
-            
-            .username {
-                font-size: 12px;
-            }
-            
             .social-button {
-                font-size: 12px;
                 padding: 8px 15px;
-            }
-            
-            .feed-content {
-                height: 250px;
-            }
-        }
-
-        /* Extra small devices (small phones) */
-        @media (max-width: 375px) {
-            .nav-links a {
-                font-size: 12px;
-            }
-            
-            .socialmediapost {
-                font-size: 36px;
-            }
-            
-            .socialmediapostcontext {
-                font-size: 13px;
-            }
-            
-            .instagramtiktoklink, 
-            .instagramtiktoklink2 {
-                padding: 10px 15px;
                 font-size: 12px;
             }
         }
