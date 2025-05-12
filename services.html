@@ -140,36 +140,106 @@
             margin-top: 100px;
         }
 
-        @media (max-width: 768px) {
+                /* Laptop View (1024px - 1366px) */
+        @media (max-width: 1366px) {
+            .page-title {
+                font-size: 75px;
+            }
+
             .services-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+            }
+
+            .service-title {
+                font-size: 16px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+                max-width: 600px;
+                margin-bottom: 45px;
+            }
+        }
+
+        /* Tablet View (<= 768px) */
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 30px;
             }
 
             .nav-links {
-                gap: 20px;
+                gap: 18px;
+                font-size: 15px;
             }
 
             .page-title {
                 font-size: 60px;
+                text-align: center;
+            }
+
+            .subtitle {
+                font-size: 17px;
+                padding: 0 20px;
+                margin-bottom: 40px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 20px;
+                gap: 16px;
+            }
+
+            .service-title {
+                font-size: 15.5px;
             }
         }
 
+        /* Mobile View (<= 480px) */
         @media (max-width: 480px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
             nav {
-                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 20px;
             }
 
             .nav-links {
+                flex-wrap: wrap;
                 gap: 10px;
-                font-size: 14px;
+                font-size: 13.5px;
+                margin-top: 10px;
             }
 
             .page-title {
-                font-size: 40px;
+                font-size: 42px;
+                text-align: center;
+                padding: 0 10px;
+            }
+
+            .subtitle {
+                font-size: 15.5px;
+                padding: 0 15px;
+                margin-bottom: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0 15px;
+            }
+
+            .service-card {
+                height: auto;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .service-icon {
+                margin-bottom: 10px;
+            }
+
+            .service-title {
+                font-size: 14.5px;
             }
         }
     </style>
