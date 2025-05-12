@@ -23,6 +23,11 @@
             background-color: #f5f2e8; 
             color: #000000;
             overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         nav {
@@ -33,6 +38,8 @@
             width: 100%;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 16.5px;
+            position: relative;
+            z-index: 10;
         }
 
         .logo {
@@ -40,17 +47,21 @@
             height: 25px;
             background-color: #0000ff;
             border-radius: 50%;
+            flex-shrink: 0;
         }
 
         .nav-links {
             display: flex;
             gap: 40px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #0000ff;
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .nav-links a:nth-child(3) {
@@ -60,15 +71,22 @@
         .instagram-text {
             position: absolute;
             left: 15px;
-            top: 50%;
+            top: 46%;
             transform: translateY(-50%) rotate(180deg);
             writing-mode: vertical-rl;
             text-orientation: mixed;
             font-size: 60px;
             color: blue;
             font-family: 'BodoniBlack', 'Bodoni MT Black', serif;
-            z-index: 0;
+            z-index: 2;
             opacity: 0.9;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+            padding-bottom: 30px;
         }
         
         .content {
@@ -76,9 +94,10 @@
             justify-content: center;
             margin-top: 20px;
             margin-left: 90px;
-            overflow-x: hidden;
             position: relative;
-            z-index: 1;
+            z-index: 5;
+            width: calc(100% - 90px);
+            overflow: hidden;
         }
         
         .video-grid {
@@ -86,7 +105,6 @@
             gap: 20px;
             justify-content: flex-start;
             width: 100%;
-            margin-right: -60px;
             transition: transform 0.3s ease;
             flex-wrap: nowrap;
         }
@@ -124,12 +142,12 @@
             display: flex;
             justify-content: flex-start;
             width: 90%;
-            margin-left: 33px;
+            margin-left: 31px;
             text-decoration: none;
             color: #000;
-            margin-top: -36px;
+            margin-top: -35px;
             position: relative;
-            z-index: 1;
+            z-index: 5;
         }
         
         .back-button {
@@ -169,10 +187,63 @@
             right: 10px;
         }
         
+        .footer {
+            background-color: #0000ff;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            font-family: Calibri, 'Trebuchet MS', sans-serif;
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .video-container {
+                width: 280px;
+                flex: 0 0 280px;
+            }
+            
+            .video-thumb {
+                height: 400px;
+            }
+        }
+        
         @media (max-width: 1024px) {
             .video-container {
-                width: 300px;
-                flex: 0 0 300px;
+                width: 250px;
+                flex: 0 0 250px;
+            }
+            
+            .video-thumb {
+                height: 380px;
+            }
+            
+            .instagram-text {
+                font-size: 50px;
+                left: 10px;
+            }
+            
+            .content {
+                margin-left: 80px;
+                width: calc(100% - 80px);
+            }
+            
+            .navigation {
+                margin-left: 80px;
+            }
+            
+            .nav-links {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
             }
             
             .instagram-text {
@@ -180,49 +251,126 @@
                 left: 5px;
             }
             
-            .content {
-                margin-left: 70px;
-            }
-            
-            .navigation {
-                margin-left: 45px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 20px;
-                font-size: 16px;
-            }
-            
-            .instagram-text {
-                font-size: 30px;
-                left: 5px;
-            }
-            
             .video-container {
-                width: 270px;
-                flex: 0 0 270px;
+                width: 220px;
+                flex: 0 0 220px;
+            }
+            
+            .video-thumb {
+                height: 340px;
             }
             
             .content {
                 margin-left: 60px;
+                width: calc(100% - 60px);
             }
             
             .navigation {
-                margin-left: 35px;
+                margin-left: 60px;
+            }
+            
+            nav {
+                padding: 15px 3%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .nav-links {
+                gap: 10px;
+                font-size: 12px;
+            }
+            
+            .instagram-text {
+                font-size: 32px;
+                left: 5px;
+            }
+            
+            .video-container {
+                width: 180px;
+                flex: 0 0 180px;
+            }
+            
+            .video-thumb {
+                height: 280px;
+            }
+            
+            .content {
+                margin-left: 50px;
+                width: calc(100% - 50px);
+            }
+            
+            .navigation {
+                margin-left: 50px;
+            }
+            
+            .arrow {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .caption-button {
+                font-size: 14px;
+                padding: 10px;
+            }
+            
+            nav {
+                padding: 10px 2%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                margin-top: 10px;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .instagram-text {
+                font-size: 24px;
+                left: 2px;
+            }
+            
+            .video-container {
+                width: 150px;
+                flex: 0 0 150px;
+            }
+            
+            .video-thumb {
+                height: 240px;
+            }
+            
+            .content {
+                margin-left: 40px;
+                width: calc(100% - 40px);
+            }
+            
+            .navigation {
+                margin-left: 40px;
+            }
+            
+            .caption-button {
+                font-size: 12px;
+                padding: 8px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 8px 15px;
+                justify-content: flex-start;
+            }
+            
+            .nav-links a {
+                font-size: 11px;
             }
         }
 
-        .footer {
-            background-color: #0000ff;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 35px;
-            font-family: Calibri, 'Trebuchet MS', sans-serif;
-            position: relative;
-            z-index: 1;
+        @font-face {
+            font-family: 'BodoniBlack';
+            src: url("/font/BOD_BLAR.TTF") format('truetype');
+            font-weight: normal;
+            font-style: normal;
         }
 
 </style>
@@ -240,50 +388,52 @@
     </nav>
 
     <div class="instagram-text">INSTAGRAM</div>
-        
-    <div class="content">
-        <div class="arrow arrow-left">&lt;</div>
-        <div class="video-grid">
-            <div class="video-container">
-                <video src="video/WhatsApp Video 2025-03-07 at 16.24.03.mp4" class="video-thumb"></video>
-                <div class="video-caption">
-                    <button class="caption-button">Short vlog to Bandung!</button>
-                </div>
-            </div>
-            
-            <div class="video-container">
-                <video src="video/IMG_3573.MP4  " class="video-thumb"></video>
-                <div class="video-caption">
-                    <button class="caption-button">Playing Luge in Lembang!</button>
-                </div>
-            </div>
-            
-            <div class="video-container">
-                <video src="video/IMG_2567.MP4" class="video-thumb"></video>
-                <div class="video-caption">
-                    <button class="caption-button">Short vlog of us cooking!</button>
-                </div>
-            </div>
-            
-            <div class="video-container">
-                <video src="video/IMG_1985.MP4" class="video-thumb"></video>
-                <div class="video-caption">
-                    <button class="caption-button">Kodagu Cafe!</button>
-                </div>
-            </div>
-            
-            <div class="video-container">
-                <video src="video/IMG_1956 (1).MP4" class="video-thumb"></video>
-                <div class="video-caption">
-                    <button class="caption-button">Friends with Bru Cafe!</button>
-                </div>
-            </div>
-        </div>
-        <div class="arrow arrow-right">&gt;</div>
-    </div>
     
-    <div class="navigation">
-        <a href="socialmedia.html" class="back-button">back</a>
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="arrow arrow-left">&lt;</div>
+            <div class="video-grid">
+                <div class="video-container">
+                    <video src="video/WhatsApp Video 2025-03-07 at 16.24.03.mp4" class="video-thumb"></video>
+                    <div class="video-caption">
+                        <button class="caption-button">Short vlog to Bandung!</button>
+                    </div>
+                </div>
+                
+                <div class="video-container">
+                    <video src="video/IMG_3573.MP4" class="video-thumb"></video>
+                    <div class="video-caption">
+                        <button class="caption-button">Playing Luge in Lembang!</button>
+                    </div>
+                </div>
+                
+                <div class="video-container">
+                    <video src="video/IMG_2567.MP4" class="video-thumb"></video>
+                    <div class="video-caption">
+                        <button class="caption-button">Short vlog of us cooking!</button>
+                    </div>
+                </div>
+                
+                <div class="video-container">
+                    <video src="video/IMG_1985.MP4" class="video-thumb"></video>
+                    <div class="video-caption">
+                        <button class="caption-button">Kodagu Cafe!</button>
+                    </div>
+                </div>
+                
+                <div class="video-container">
+                    <video src="video/IMG_1956 (1).MP4" class="video-thumb"></video>
+                    <div class="video-caption">
+                        <button class="caption-button">Friends with Bru Cafe!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="arrow arrow-right">&gt;</div>
+        </div>
+        
+        <div class="navigation">
+            <a href="socialmedia.html" class="back-button">back</a>
+        </div>
     </div>
 
     <footer class="footer">
@@ -303,9 +453,10 @@
             
             // Calculate how many videos are visible at once based on screen width
             function getVisibleVideosCount() {
-                if (window.innerWidth > 1200) {
+                const width = window.innerWidth;
+                if (width > 1200) {
                     return 3; // Desktop shows 3 videos
-                } else if (window.innerWidth > 768) {
+                } else if (width > 768) {
                     return 2; // Tablet shows 2 videos
                 } else {
                     return 1; // Mobile shows 1 video
@@ -325,8 +476,16 @@
                 arrowRight.style.display = currentIndex >= maxIndex ? 'none' : 'flex';
             }
             
-            // Initialize arrow visibility
-            updateArrowVisibility();
+            // Initialize carousel
+            function initCarousel() {
+                // Reset carousel position when window size changes
+                currentIndex = 0;
+                moveCarousel();
+                updateArrowVisibility();
+            }
+            
+            // Initialize on page load
+            initCarousel();
             
             // Arrow click handlers
             arrowLeft.addEventListener('click', function() {
@@ -479,8 +638,7 @@
             
             // Handle window resize
             window.addEventListener('resize', function() {
-                moveCarousel();
-                updateArrowVisibility();
+                initCarousel();
             });
         });
     </script>

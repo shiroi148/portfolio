@@ -12,12 +12,21 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
 
         body {
             background-color: #f5f2e8; 
             color: #000000;
             overflow-x: hidden;
- 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         nav {
@@ -58,7 +67,6 @@
             gap: 50px;
             flex-wrap: wrap;
             padding-top: 25px;
-            min-height: 100vh;
         }
 
         .social-card {
@@ -225,7 +233,7 @@
         .container{
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            flex: 1;
         }
 
         /* Responsive styles */
@@ -283,6 +291,13 @@
                 width: 100%;
             }
         }
+
+        @font-face {
+            font-family: 'BodoniBlack';
+            src: url("/font/BOD_BLAR.TTF") format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
 </style>
 </head>
 <body>
@@ -326,10 +341,10 @@
                     <span class="username">rachel.gozali</span>
                 </div>
                 <a href="instagram2.html">
-                <div class="feed-content">
-                    <div class="feed-container">
-                        <video src="video/WhatsApp Video 2025-03-07 at 16.24.03.mp4" width="300px" height="300px"></video>
-                    </div>
+                    <div class="feed-content">
+                        <div class="feed-container">
+                            <video src="video/WhatsApp Video 2025-03-07 at 16.24.03.mp4" width="300px" height="300px"></video>
+                        </div>
                 </a>
     
                 </div>
@@ -353,12 +368,11 @@
                 <div class="social-button">I'm passionate about turning everyday life into aesthetic content for TikTok — whether it's a cozy café visit or just a mood.</div>
             </div>
         </div>
-    
-        <footer class="footer">
-            <p class="copyright">Copyright © 2025 <span class="name">Rachel</span>. All Rights Reserved.</p>
-        </footer>
-
     </div>
+
+    <footer class="footer">
+        <p class="copyright">Copyright © 2025 <span class="name">Rachel</span>. All Rights Reserved.</p>
+    </footer>
 
     <script>
         // Script to play videos on hover
