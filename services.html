@@ -140,106 +140,111 @@
             margin-top: 120px;
         }
 
-                /* Laptop View (1024px - 1366px) */
-        @media (max-width: 1366px) {
-            .page-title {
-                font-size: 75px;
-            }
-
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1200px) {
             .services-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 18px;
+                max-width: 900px;
+                gap: 15px;
             }
-
-            .service-title {
-                font-size: 16px;
-            }
-
-            .subtitle {
-                font-size: 18px;
-                max-width: 600px;
-                margin-bottom: 45px;
+            
+            .service-card {
+                padding: 15px;
             }
         }
 
-        /* Tablet View (<= 768px) */
-        @media (max-width: 768px) {
-            nav {
-                padding: 20px 30px;
-            }
-
-            .nav-links {
-                gap: 18px;
-                font-size: 15px;
-            }
-
+        @media (max-width: 992px) {
             .page-title {
-                font-size: 60px;
-                text-align: center;
+                font-size: 70px;
             }
-
-            .subtitle {
-                font-size: 17px;
-                padding: 0 20px;
-                margin-bottom: 40px;
-            }
-
+            
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
-                padding: 0 20px;
-                gap: 16px;
+                max-width: 700px;
             }
-
-            .service-title {
-                font-size: 15.5px;
+            
+            nav {
+                padding: 15px 30px;
+            }
+            
+            .nav-links {
+                gap: 25px;
             }
         }
 
-        /* Mobile View (<= 480px) */
-        @media (max-width: 480px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px 20px;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                gap: 10px;
-                font-size: 13.5px;
-                margin-top: 10px;
-            }
-
+        @media (max-width: 768px) {
             .page-title {
-                font-size: 42px;
-                text-align: center;
-                padding: 0 10px;
+                font-size: 60px;
             }
-
+            
             .subtitle {
-                font-size: 15.5px;
-                padding: 0 15px;
+                font-size: 18px;
                 margin-bottom: 30px;
             }
+            
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo {
+                align-self: flex-start;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .services-grid {
+                gap: 15px;
+                max-width: 500px;
+            }
+        }
 
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 40px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+            
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
-                padding: 0 15px;
+                max-width: 350px;
             }
-
+            
             .service-card {
-                height: auto;
-                flex-direction: column;
-                align-items: flex-start;
+                height: 70px;
             }
-
+            
             .service-icon {
-                margin-bottom: 10px;
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
             }
-
+            
+            .service-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+            
             .service-title {
-                font-size: 14.5px;
+                font-size: 15px;
+            }
+            
+            .nav-links {
+                font-size: 14px;
+                gap: 10px;
+            }
+            
+            .footer {
+                margin-top: 30px;
+                font-size: 14px;
             }
         }
     </style>
