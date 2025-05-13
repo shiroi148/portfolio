@@ -37,9 +37,8 @@
             padding: 20px 50px;
             width: 100%;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 16.5px;
-            position: relative;
-            z-index: 10;
+            font-size: 1.3vw;   
+            padding-top: 20px;
         }
 
         .logo {
@@ -71,11 +70,11 @@
         .instagram-text {
             position: absolute;
             left: 15px;
-            top: 47%;
+            top: 45%;
             transform: translateY(-50%) rotate(180deg);
             writing-mode: vertical-rl;
-            text-orientation: mixed;
-            font-size: 60px;
+            /* text-orientation: mixed; */
+            font-size: 10vh;
             color: blue;
             font-family: 'BodoniBlack', 'Bodoni MT Black', serif;
             z-index: 2;
@@ -114,6 +113,7 @@
             width: 100%;
             transition: transform 0.3s ease;
             flex-wrap: nowrap;
+            margin-left: 20px;
             /* align-items: center;
             align-self: center;
             justify-content: center; */
@@ -122,16 +122,16 @@
         .video-container {
             position: relative;
             width: 305px;
-            flex: 0 0 305px;
+            flex: 0 0 24vw;
             overflow: hidden;
-            margin-right: 10px;
+            margin-right: 20px;
             align-items: center;
             align-self: center;
         }
         
         .video-thumb {
             width: 100%;
-            height: 450px;
+            height: 77vh;
             object-fit: cover;
             border-radius: 30px;
             align-items: center;
@@ -146,7 +146,7 @@
             border: none;
             border-radius: 0px;
             padding: 15px;
-            font-size: 16px;
+            font-size: 1.3vw;
             background-color: transparent;
             cursor: pointer;
             width: 100%;
@@ -156,11 +156,10 @@
             display: flex;
             justify-content: flex-start;
             width: 90%;
-          
             text-decoration: none;
             color: #000;
-            margin-left: -60px;
-            margin-top: -35px;
+            margin-left: -76px;
+            margin-top: -37.5px;
             position: relative;
             z-index: 5;
             align-items: center;
@@ -168,7 +167,7 @@
         }
         
         .back-button {
-            font-size: 18px;
+            font-size: 1.4vw;
             font-weight: bold;
             text-decoration: none;
             color: #000;
@@ -398,10 +397,9 @@
             <a href="contact.html">Contact</a>
         </div>
     </nav>
-
-    <div class="instagram-text">TIKTOK</div>
     
     <div class="content-wrapper">
+        <div class="instagram-text">TIKTOK</div>
         <div class="content">
             <div class="arrow arrow-left">&lt;</div>
             <div class="video-grid">
