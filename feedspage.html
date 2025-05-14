@@ -20,7 +20,10 @@
         }
 
         body {
-            background-color: #f5f2e8; 
+            background-color: #f5f2e8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
         }
 
         header {
@@ -197,6 +200,20 @@
             font-weight: bold;
         }
 
+        /* Hamburger menu for mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: blue;
+            margin: 3px 0;
+        }
+
         /* Responsive Media Queries */
         @media screen and (max-width: 1200px) {
             .portfolio-grid {
@@ -207,6 +224,7 @@
         @media screen and (max-width: 992px) {
             .portfolio-title h1 {
                 font-size: 90px;
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .portfolio-categories {
@@ -256,6 +274,10 @@
         }
 
         @media screen and (max-width: 576px) {
+            .hamburger {
+                display: flex;
+                z-index: 999;
+            }
             .portfolio-grid {
                 grid-template-columns: 1fr;
                 margin: 0 20px;
@@ -317,6 +339,12 @@
             <div class="logo-circle"></div>
         </div>
         <nav>
+            <div class="logo"></div>
+            <div class="hamburger" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
             <ul>
                 <li><a href="index.html">About Me</a></li>
                 <li><a href="portfoliopage.html">Portfolio</a></li>
@@ -370,5 +398,30 @@
         <p class="copyright">Copyright © 2025 <span class="name">Rachel</span>. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+        
+        // For touch devices - allow tap to show full color
+        document.addEventListener('DOMContentLoaded', function() {
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            portfolioItems.forEach(item => {
+                item.addEventListener('touchstart', function() {
+                    const img = this.querySelector('img');
+                    const desc = this.querySelector('.item-description');
+                    
+                    if (img.style.filter === 'none') {
+                        img.style.filter = 'sepia(1.5) hue-rotate(55deg) saturate(0.9) brightness(0.8)';
+                        desc.style.opacity = '0';
+                    } else {
+                        img.style.filter = 'none';
+                        desc.style.opacity = '1';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
